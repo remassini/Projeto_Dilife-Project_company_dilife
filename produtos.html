@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Di Life Services</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/Imagens/MagnoLIA (4) (1).png" />
+    <!-- Bootstrap icons-->
+
+    <!-- Core theme CSS (includes Bootstrap)-->
+
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/dist/css/cart.css" />
+    <style>
+        body::after {
+            content: "";
+            background-image: url("assets/Imagens/background.png");
+            background-size: cover;
+            background-position: center;
+
+            opacity: 0.5;
+
+            position: fixed;
+            top: 90%;
+            left: 95%;
+            width: 60px;
+            height: 60px;
+
+        }
+
+        @media (max-width:760px) {
+            body::after {
+                
+                display: none;
+
+            }
+        }
+    </style>
+
+</head>
+
+<body class="mobile-page">
+    <main>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+            <div class="container px-5">
+                <a class="navbar-brand fw-bolder" href="index.html">Di Life Services</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation"><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">Sobre nós</a></li>
+
+                        <li class="nav-item"><a class="nav-link" href="produtos.html">Produtos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+
+
+
+
+
+                    </ul>
+                    <a href="https://dilifesn.mikweb.com.br" target="_blank"><button class="botao">Área do Cliente</button></a>
+                </div>
+            </div>
+        </nav>
+
+
+        <!-- modelos de prata na lista e no carrinho -->
+        <div class="models">
+
+            <!-- prata na lista -->
+            <div class="prata-item">
+                <a href="">
+                    <div class="prata-item--img"><img src="" /></div>
+                    <div class="prata-item--add"> 
+                        Contratar
+                    </div>
+                </a>
+                <div class="prata-item--name"></div>
+                <div class="prata-item--desc">--</div>
+            </div>
+
+
+        </div>
+
+        <!-- conteudo principal -->
+
+
+        <h2 style="color: blue; font-weight: bold;"> Nossos Planos</h2>
+
+        <div class="prata-area"></div>
+
+        <!-- janela modal .prataWindowArea -->
+        <div class="prataWindowArea">
+            <div class="prataWindowBody">
+                <div class="prataInfo--cancelMobileButton">Voltar</div>
+                <div class="prataBig">
+                    <img src="" />
+                </div>
+                <div class="prataInfo">
+                    <h1>--</h1>
+                    <div class="prataInfo--desc">--</div>
+                    <div class="prataInfo--sizearea">
+                        <div class="prataInfo--sector"></div>
+                        <div class="prataInfo--sizes">
+                            <div data-key="P" class="prataInfo--size"><span></span></div>
+                            <div data-key="M" class="prataInfo--size"><span></span></div>
+                            <div data-key="G" class="prataInfo--size selected"> <span></span></div>
+                        </div>
+                    </div>
+    
+                    <a href="https://dilifesn.mikweb.com.br/cadastro" target="_blank">
+                    <div class="prataInfo--addButton">Adquirir
+                    </div>
+                    </a>
+                    <div class="prataInfo--cancelButton">Cancelar</div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="py-4 mt-auto flex-color-page">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto">
+                        <div class="small m-0 text-white">Copyright &copy; Infossini Solutions</div>
+                    </div>
+                    <div class="col-auto">
+
+                        <span class="text-white mx-1"></span>
+                        <a class="link-light small" href="faq.html" target="_blank">Contatos</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- /janela modal .prataWindowArea -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="planos.js"></script>
+        <script src="assets/dist/js/scripts.js"></script>
+
+</body>
+
+</html>
