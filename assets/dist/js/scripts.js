@@ -61,39 +61,37 @@ const pegarKey = (e) => {
     console.log('prata clicada ' + key)
     console.log(prataJson[key])
 
-    // garantir que a quantidade inicial de pratas é 1
+    
     quantpratas = 1
 
-    // Para manter a informação de qual prata foi clicada
+   
     modalKey = key
 
     return key
 }
 
 const preencherTamanhos = (key) => {
-    // tirar a selecao de tamanho atual e selecionar o tamanho grande
+   
     seleciona('.prataInfo--size.selected').classList.remove('selected')
 
-    // selecionar todos os tamanhos
+   
     selecionaTodos('.prataInfo--size').forEach((size, sizeIndex) => {
-        // selecionar o tamanho grande
+        
         (sizeIndex == 2) ? size.classList.add('selected') : ''
         size.querySelector('span').innerHTML = prataJson[key].sizes[sizeIndex]
     })
 }
 
 const escolherTamanhoPreco = (key) => {
-    // Ações nos botões de tamanho
-    // selecionar todos os tamanhos
+
     selecionaTodos('.prataInfo--size').forEach((size, sizeIndex) => {
         size.addEventListener('click', (e) => {
-            // clicou em um item, tirar a selecao dos outros e marca o q vc clicou
-            // tirar a selecao de tamanho atual e selecionar o tamanho grande
+
             seleciona('.prataInfo--size.selected').classList.remove('selected')
-            // marcar o que vc clicou, ao inves de usar e.target use size, pois ele é nosso item dentro do loop
+          
             size.classList.add('selected')
 
-            // mudar o preço de acordo com o tamanho
+           
         })
     })
 }
@@ -119,29 +117,24 @@ const adicionarNoCarrinho = () => {
     seleciona('.prataInfo--addButton').addEventListener('click', () => {
         console.log('Adicionar no carrinho')
 
-        // pegar dados da janela modal atual
-    	// qual prata? pegue o modalKey para usar prataJson[modalKey]
+
     	console.log("prata " + modalKey)
-    	// tamanho
 	    let size = seleciona('.prataInfo--size.selected').getAttribute('data-key')
 	    console.log("Tamanho " + size)
-	    // quantidade
     	console.log("Quant. " + quantpratas)
       
-        // crie um identificador que junte id e tamanho
-	    // concatene as duas informacoes separadas por um símbolo, vc escolhe
+
 	    let identificador = prataJson[modalKey].id+'t'+size
 
-        // antes de adicionar verifique se ja tem aquele codigo e tamanho
-        // para adicionarmos a quantidade
+
         let key = cart.findIndex( (item) => item.identificador == identificador )
         console.log(key)
 
         if(key > -1) {
-            // se encontrar aumente a quantidade
+
             cart[key].qt += quantpratas
         } else {
-            // adicionar objeto prata no carrinho
+            
             let prata = {
                 identificador,
                 id: prataJson[modalKey].id,
@@ -162,12 +155,11 @@ const adicionarNoCarrinho = () => {
 const abrirCarrinho = () => {
     console.log('Qtd de itens no carrinho ' + cart.length)
     if(cart.length > 0) {
-        // mostrar o carrinho
+        
 	    seleciona('aside').classList.add('show')
-        seleciona('header').style.display = 'flex' // mostrar barra superior
-    }
+        seleciona('header').style.display = 'flex' 
 
-    // exibir aside do carrinho no modo mobile
+
     seleciona('.menu-openner').addEventListener('click', () => {
         if(cart.length > 0) {
             seleciona('aside').classList.add('show')
@@ -177,7 +169,7 @@ const abrirCarrinho = () => {
 }
 
 const fecharCarrinho = () => {
-    // fechar o carrinho com o botão X no modo mobile
+   
     seleciona('.menu-closer').addEventListener('click', () => {
         seleciona('aside').style.left = '100vw' // usando 100vw ele ficara fora da tela
         seleciona('header').style.display = 'flex'
@@ -185,31 +177,30 @@ const fecharCarrinho = () => {
 }
 
 const atualizarCarrinho = () => {
-    // exibir número de itens no carrinho
+    
 	seleciona('.menu-openner span').innerHTML = cart.length
 	
-	// mostrar ou nao o carrinho
+	
 	if(cart.length > 0) {
 
-		// mostrar o carrinho
+		
 		seleciona('aside').classList.add('show')
 
-		// zerar meu .cart para nao fazer insercoes duplicadas
+		
 		seleciona('.cart').innerHTML = ''
 
-        // crie as variaveis antes do for
 		let subtotal = 0
 		let desconto = 0
 		let total    = 0
 
-        // para preencher os itens do carrinho, calcular subtotal
+        
 		for(let i in cart) {
-			// use o find para pegar o item por id
+			
 			let prataItem = prataJson.find( (item) => item.id == cart[i].id )
 			console.log(prataItem)
 
 
-			// fazer o clone, exibir na telas e depois preencher as informacoes
+			
 			let cartItem = seleciona('.models .cart--item').cloneNode(true)
 			seleciona('.cart').append(cartItem)
 
